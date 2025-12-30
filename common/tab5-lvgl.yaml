@@ -907,7 +907,7 @@ lvgl:
 
             widgets:
             - button:
-                id: light_btn
+                id: light_btn_living_room_drinks_cabinet
                 align: CENTER
                 width: 100
                 height: 70
@@ -922,7 +922,7 @@ lvgl:
                       data:
                         entity_id: light.living_room_drinks_cabinet
             - button:
-                id: light_btn
+                id: light_btn_living_room_lamp
                 align: CENTER
                 width: 100
                 height: 70
@@ -937,7 +937,7 @@ lvgl:
                       data:
                         entity_id: light.living_room_lamp
             - button:
-                id: light_btn
+                id: light_btn_living_room_tv_side_lights_hue_area
                 align: CENTER
                 width: 100
                 height: 70
@@ -952,7 +952,7 @@ lvgl:
                       data:
                         entity_id: light.living_room_tv_side_lights_hue_area
             - button:
-                id: light_btn
+                id: light_btn_living_room_hue_light_strip_above_tv
                 align: CENTER
                 width: 100
                 height: 70
@@ -967,7 +967,7 @@ lvgl:
                       data:
                         entity_id: light.living_room_hue_light_strip_above_tv
             - button:
-                id: light_btn
+                id: light_btn_living_room_above_sofa
                 align: CENTER
                 width: 100
                 height: 70
@@ -982,7 +982,7 @@ lvgl:
                       data:
                         entity_id: light.living_room_above_sofa
             - button:
-                id: light_btn
+                id: light_btn_living_room_behind_tv_cloud_controlled
                 align: CENTER
                 width: 100
                 height: 70
@@ -997,7 +997,7 @@ lvgl:
                       data:
                         entity_id: light.living_room_behind_tv_cloud_controlled
             - button:
-                id: light_btn
+                id: light_btn_sync_lights
                 align: CENTER
                 width: 100
                 height: 70
@@ -1012,7 +1012,7 @@ lvgl:
                       data:
                         entity_id: light.sync_lights
             - button:
-                id: light_btn
+                id: light_btn_living_room_all_lights
                 align: CENTER
                 width: 100
                 height: 70
