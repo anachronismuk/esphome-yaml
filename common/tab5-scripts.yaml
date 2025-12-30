@@ -446,7 +446,7 @@ script:
       - homeassistant.action:
           action: climate.set_hvac_mode
           data:
-            entity_id: climate.unit_neo_hex_central_ac
+            entity_id: climate.living_room_radiator_main_valve
             hvac_mode: !lambda return id(hvac_state_table)[ac_mode_idx];
   - id: set_ac_fan_mode
     parameters:
@@ -455,7 +455,7 @@ script:
       - homeassistant.action:
           action: climate.set_fan_mode
           data:
-            entity_id: climate.unit_neo_hex_central_ac
+            entity_id: climate.living_room_radiator_main_valve
             fan_mode: !lambda return id(fan_modes_table)[ac_fan_mode_idx];
   # This script was used on spinbox/arc widget
   # to set the temperature to climate entity
@@ -467,7 +467,25 @@ script:
       - homeassistant.action:
           action: climate.set_temperature
           data:
-            entity_id: climate.unit_neo_hex_central_ac
+            entity_id: climate.living_room_radiator_main_valve
             temperature: !lambda return temp_value;
+  - id: set_hvac_mode
+    parameters:
+      hvac_mode: string
+    then:
+      - homeassistant.action:
+        action: climate.set_hvac_mode
+        data:
+          entity_id: climate.living_room_radiator_main_valve
+          temperature: !lambda return hvac_mode;
+  - id: set_preset_mode
+    parameters:
+      preset_mode: string
+    then:
+      - homeassistant.action:
+        action: climate.set_preset_mode
+        data:
+          entity_id: climate.living_room_radiator_main_valve
+          temperature: !lambda return preset_mode;
 
 

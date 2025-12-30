@@ -742,12 +742,6 @@ lvgl:
                             on_change:
                               - lambda: id(update_arc_color)->execute(x);
                               - lvgl.label.update:
-                                  id: demo_hvac_state
-                                  text: !lambda |-
-                                    char buf[16];
-                                    lv_dropdown_get_selected_str(id(hvac_mode_dd).obj, buf, sizeof(buf));
-                                    return str_upper_case(std::string(buf));
-                              - lvgl.label.update:
                                   id: hvac_state_label
                                   text: !lambda |-
                                     char hvac_mode_buf[16];
