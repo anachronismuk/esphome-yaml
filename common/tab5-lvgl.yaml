@@ -714,7 +714,7 @@ lvgl:
                             text_font: montserrat_24
                             text: "Mode"
                         - dropdown:
-                            id: ac_mode_dd
+                            id: hvac_mode_dd
                             width: 150
                             height: 64
                             radius: 12
@@ -729,11 +729,8 @@ lvgl:
                               opa: TRANSP
                             selected_text: "Off"
                             options:
-                              - Heat_Cool
                               - Heat
-                              - Cool
-                              - Dry
-                              - Only Fan
+                              - Sleep
                               - "Off" # In case conversions
                             dropdown_list:
                               text_font: montserrat_24
@@ -745,25 +742,25 @@ lvgl:
                             on_change:
                               - lambda: id(update_arc_color)->execute(x);
                               - lvgl.label.update:
-                                  id: demo_ac_state
+                                  id: demo_hvac_state
                                   text: !lambda |-
                                     char buf[16];
-                                    lv_dropdown_get_selected_str(id(ac_mode_dd).obj, buf, sizeof(buf));
+                                    lv_dropdown_get_selected_str(id(hvac_mode_dd).obj, buf, sizeof(buf));
                                     return str_upper_case(std::string(buf));
                               - lvgl.label.update:
-                                  id: ac_state_label
+                                  id: hvac_state_label
                                   text: !lambda |-
-                                    char ac_mode_buf[16];
-                                    lv_dropdown_get_selected_str(id(ac_mode_dd).obj, ac_mode_buf, sizeof(ac_mode_buf));
-                                    return str_upper_case(std::string(ac_mode_buf));
+                                    char hvac_mode_buf[16];
+                                    lv_dropdown_get_selected_str(id(hvac_mode_dd).obj, hvac_mode_buf, sizeof(hvac_mode_buf));
+                                    return str_upper_case(std::string(hvac_mode_buf));
 
-                              - lambda: id(set_ac_state)->execute(x);
+                              - lambda: id(set_hvac_mode)->execute(x);
                         - label:
                             text_font: montserrat_24
                             text: "Fan Mode"
                         # AC FAN SPEED
                         - dropdown:
-                            id: fan_mode_dd
+                            id: climate_mode_dd
                             dir: TOP
                             width: 150
                             height: 64
@@ -778,10 +775,11 @@ lvgl:
                               opa: TRANSP
                             selected_text: "Auto"
                             options:
-                              - High
-                              - Medium
-                              - Low
-                              - Auto
+                              - none
+                              - frost
+                              - eco
+                              - comfort
+                              - boost
                             dropdown_list:
                               text_align: CENTER
                               text_font: montserrat_24
@@ -791,12 +789,12 @@ lvgl:
                                   bg_color: 0xE9F3F8
                             on_change:
                               - lvgl.label.update:
-                                  id: ac_fan_mode_label
+                                  id: climate_preset_label
                                   text: !lambda |-
-                                    char fan_mode_buf[24];
-                                    lv_dropdown_get_selected_str(id(fan_mode_dd).obj, fan_mode_buf, sizeof(fan_mode_buf));
-                                    return std::string(fan_mode_buf);
-                              - lambda: id(set_ac_fan_mode)->execute(x);
+                                    char climate_mode_buf[24];
+                                    lv_dropdown_get_selected_str(id(climate_mode_dd).obj, climate_mode_buf, sizeof(climate_mode_buf));
+                                    return std::string(climate_mode_buf);
+                              - lambda: id(set_preset_mode)->execute(x);
   pages:
     - id: dashboard_page
       widgets:
@@ -1081,13 +1079,13 @@ lvgl:
                           pad_column: 8
                         widgets:
                           - label:
-                              id: ac_state_label
+                              id: hvac_state_label
                               text_font: montserrat_24
                               text: "Off"
                           - label:
-                              id: ac_fan_mode_label
+                              id: Climate_preset_label
                               text_font: montserrat_24
-                              text: "Auto"   
+                              text: "eco"   
                     - obj:
                         styles: climate_control_bg
                         scrollable: false
