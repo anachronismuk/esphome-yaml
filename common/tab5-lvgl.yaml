@@ -398,7 +398,7 @@ lvgl:
                         - homeassistant.action:
                             action: light.turn_on
                             data:
-                              entity_id: light.unit_neo_hex_unit_neohex
+                              entity_id: light.living_room_light_corner_lamp
                               brightness: !lambda return int(x);
                         - lvgl.label.update:
                             id: light_bright_label
@@ -437,7 +437,7 @@ lvgl:
                             # The RGB values are from global variables
                             # which comes from the indicator
                             data:
-                              light_name: 'light.unit_neo_hex_unit_neohex'
+                              light_name: 'light.living_room_light_corner_lamp'
                               red: !lambda return std::to_string(id(light_r));
                               green: !lambda return std::to_string(id(light_g));
                               blue: !lambda return std::to_string(id(light_b));
@@ -463,7 +463,7 @@ lvgl:
                             # The RGB values are from global variables
                             # which comes from the indicator
                             data:
-                              light_name: 'light.unit_neo_hex_unit_neohex'
+                              light_name: 'light.living_room_light_corner_lamp'
                               red: !lambda return std::to_string(id(light_r));
                               green: !lambda return std::to_string(id(light_g));
                               blue: !lambda return std::to_string(id(light_b));
@@ -499,7 +499,7 @@ lvgl:
                               - homeassistant.action:
                                   action: light.toggle
                                   data:
-                                    entity_id: light.unit_neo_hex_unit_neohex
+                                    entity_id: light.living_room_light_corner_lamp
                         - button:
                             id: bright_ctrl_btn
                             styles: card_md_icon_btn
@@ -946,11 +946,11 @@ lvgl:
                           - homeassistant.action:
                               action: light.toggle
                               data:
-                                entity_id: light.unit_neo_hex_unit_neohex
+                                entity_id: light.living_room_light_corner_lamp
 
                     - label:
                         styles: card_sm_main_label
-                        text: "Area 1"
+                        text: "Lamp"
                     - label:
                         styles: card_sm_sub_label
                         id: demo_light_status
