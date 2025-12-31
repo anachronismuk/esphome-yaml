@@ -462,13 +462,13 @@ script:
   # it doesn't turn on/off, use the dropdown instead
   - id: set_ac_temp
     parameters:
-      temp_value: float
+      temperature: float
     then:
       - homeassistant.action:
           action: climate.set_temperature
           data:
             entity_id: climate.living_room_radiator_main_valve
-            temperature: !lambda return temp_value;
+            temperature: !lambda return temperature;
   - id: set_hvac_mode
     parameters:
       hvac_mode_idx: int
