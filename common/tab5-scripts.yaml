@@ -477,7 +477,7 @@ script:
           action: climate.set_hvac_mode
           data:
             entity_id: climate.living_room_radiator_main_valve
-            hvac_mode: !lambda return id(hvac_modes_table)[hvac_mode_idx];;
+            hvac_mode: !lambda return id(hvac_state_table)[hvac_mode_idx];;
   - id: set_preset_mode
     parameters:
       preset_mode_idx: int
