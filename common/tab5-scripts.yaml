@@ -474,18 +474,18 @@ script:
       hvac_mode: string
     then:
       - homeassistant.action:
-        action: climate.set_hvac_mode
-        data:
-          entity_id: climate.living_room_radiator_main_valve
-          hvac_mode: !lambda return hvac_mode;
+          action: climate.set_hvac_mode
+          data:
+            entity_id: climate.living_room_radiator_main_valve
+            hvac_mode: !lambda return hvac_mode;
   - id: set_preset_mode
     parameters:
       preset_mode: string
     then:
       - homeassistant.action:
-        action: climate.set_preset_mode
-        data:
-          entity_id: climate.living_room_radiator_main_valve
-          preset_mode: !lambda return preset_mode;
+          action: climate.set_preset_mode
+          data:
+            entity_id: climate.living_room_radiator_main_valve
+            preset_mode: !lambda return preset_mode;
 
 
