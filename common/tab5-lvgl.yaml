@@ -603,7 +603,7 @@ lvgl:
                       # In case of performance issue
                       on_release:
                         - lambda: |-
-                            int mod = int(x) % 5;
+                            int mod = int(x) % 10;
                             if ( mod == 0 ) 
                               lv_arc_set_value(id(ac_arc), x);
                             else 
@@ -661,7 +661,7 @@ lvgl:
                             on_press:
                               - lvgl.arc.update:
                                   id: ac_arc
-                                  value: !lambda return lv_arc_get_value(id(ac_arc)) - 5.0f;
+                                  value: !lambda return lv_arc_get_value(id(ac_arc)) - 1.0f;
                               - lvgl.label.update:
                                   id: hvac_temp
                                   text:
@@ -686,7 +686,7 @@ lvgl:
                             on_press:
                               - lvgl.arc.update:
                                   id: ac_arc
-                                  value: !lambda return lv_arc_get_value(id(ac_arc)) + 5.0f;
+                                  value: !lambda return lv_arc_get_value(id(ac_arc)) + 1.0f;
                               - lvgl.label.update:
                                   id: hvac_temp
                                   text:
@@ -1041,7 +1041,7 @@ lvgl:
               - label:
                   styles: nav_label_inactivate
                   text_font: montserrat_32
-                  text: "Temperature 1"
+                  text: "Temperature"
                   grid_cell_row_pos: 0
                   grid_cell_column_pos: 0
               - obj:
@@ -1062,7 +1062,7 @@ lvgl:
                         text: "\U000F0D80"
                     - label:
                         styles: card_md_main_label
-                        text: "1st Floor"
+                        text: "4th Floor"
                     - obj:
                         bg_opa: TRANSP
                         border_opa: TRANSP
@@ -1093,7 +1093,7 @@ lvgl:
                               align: LEFT_MID
                               on_click:
                                 - lambda: |-
-                                    lv_spinbox_set_step(id(temp_spin_box), 5);
+                                    lv_spinbox_set_step(id(temp_spin_box), 0.1);
                                 - lvgl.spinbox.decrement: temp_spin_box
                               widgets:
                                 - label:
@@ -1144,7 +1144,7 @@ lvgl:
                               align: RIGHT_MID
                               on_click:
                                 - lambda: |-
-                                    lv_spinbox_set_step(id(temp_spin_box), 5);
+                                    lv_spinbox_set_step(id(temp_spin_box), 0.1);
                                 - lvgl.spinbox.increment: temp_spin_box
                               widgets:
                                 - label:
