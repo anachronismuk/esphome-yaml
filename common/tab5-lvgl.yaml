@@ -729,8 +729,11 @@ lvgl:
                               opa: TRANSP
                             selected_text: "Off"
                             options:
+                              - Heat/Cool
                               - Heat
-                              - Sleep
+                              - Cool
+                              - Auto
+                              - Dry
                               - "Off" # In case conversions
                             dropdown_list:
                               text_font: montserrat_24
