@@ -1125,7 +1125,7 @@ lvgl:
                               on_value:
                                 # use lvgl.arc.update will result a crash
                                 - lambda: |-
-                                    lv_arc_set_value(id(ac_arc), x * 10);
+                                    lv_arc_set_value(id(ac_arc), x);
                                 - lvgl.label.update:
                                     id: hvac_temp
                                     text:
