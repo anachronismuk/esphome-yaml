@@ -664,7 +664,7 @@ lvgl:
                                     args: [ 'float(lv_arc_get_value(id(ac_arc))) / 10.0f' ]
                               - lvgl.spinbox.update:
                                   id: temp_spin_box
-                                  value: !lambda return float(lv_arc_get_value(id(ac_arc))) / 10.0f';
+                                  value: !lambda return float(lv_arc_get_value(id(ac_arc))) / 10.0f;
                         - button:
                             width: 64
                             height: 64
