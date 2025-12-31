@@ -603,11 +603,11 @@ lvgl:
                       # In case of performance issue
                       on_release:
                         - lambda: |-
-                            int mod = int(x) % 2;
+                            int mod = int(x) % 5;
                             if ( mod == 0 ) 
                               lv_arc_set_value(id(ac_arc), x);
                             else 
-                              lv_arc_set_value(id(ac_arc), x - mod);
+                              lv_arc_set_value(id(ac_arc),  x - mod);
                         - lvgl.label.update:
                             id: hvac_temp
                             text:
@@ -661,7 +661,7 @@ lvgl:
                             on_press:
                               - lvgl.arc.update:
                                   id: ac_arc
-                                  value: !lambda return lv_arc_get_value(id(ac_arc)) - 2.0f;
+                                  value: !lambda return lv_arc_get_value(id(ac_arc)) - 5.0f;
                               - lvgl.label.update:
                                   id: hvac_temp
                                   text:
@@ -686,7 +686,7 @@ lvgl:
                             on_press:
                               - lvgl.arc.update:
                                   id: ac_arc
-                                  value: !lambda return lv_arc_get_value(id(ac_arc)) + 2.0f;
+                                  value: !lambda return lv_arc_get_value(id(ac_arc)) + 5.0f;
                               - lvgl.label.update:
                                   id: hvac_temp
                                   text:
@@ -1125,7 +1125,7 @@ lvgl:
                               on_value:
                                 # use lvgl.arc.update will result a crash
                                 - lambda: |-
-                                    lv_arc_set_value(id(ac_arc), x);
+                                    lv_arc_set_value(id(ac_arc), x * 10);
                                 - lvgl.label.update:
                                     id: hvac_temp
                                     text:
