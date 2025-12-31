@@ -626,7 +626,7 @@ lvgl:
                       align: CENTER
                       y: -80
                   - label:
-                      id: hvac_temp
+                      id: demo_hvac_temp
                       text_font: montserrat_48
                       text: "18.0 °C"
                       align: CENTER
