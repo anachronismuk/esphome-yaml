@@ -460,7 +460,7 @@ script:
   # This script was used on spinbox/arc widget
   # to set the temperature to climate entity
   # it doesn't turn on/off, use the dropdown instead
-  - id: set_ac_temp
+  - id: set_hvac_temp
     parameters:
       temperature: float
     then:

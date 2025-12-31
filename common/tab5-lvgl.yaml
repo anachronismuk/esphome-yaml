@@ -609,7 +609,7 @@ lvgl:
                             else 
                               lv_arc_set_value(id(ac_arc), x - mod);
                         - lvgl.label.update:
-                            id: demo_ac_temp
+                            id: hvac_temp
                             text:
                               format: "%.1f °C"
                               args: [ 'float(lv_arc_get_value(id(ac_arc))) / 10.0f' ]
@@ -617,7 +617,7 @@ lvgl:
                             id: temp_spin_box
                             value: !lambda return float(lv_arc_get_value(id(ac_arc)));
                         
-                        - lambda: id(set_ac_temp)->execute(float(x) / 10.0f);
+                        - lambda: id(set_hvac_temp)->execute(float(x) / 10.0f);
 
                   - label:
                       text_font: montserrat_24
@@ -626,7 +626,7 @@ lvgl:
                       align: CENTER
                       y: -80
                   - label:
-                      id: demo_ac_temp
+                      id: hvac_temp
                       text_font: montserrat_48
                       text: "18.0 °C"
                       align: CENTER
@@ -663,7 +663,7 @@ lvgl:
                                   id: ac_arc
                                   value: !lambda return lv_arc_get_value(id(ac_arc)) - 5.0f;
                               - lvgl.label.update:
-                                  id: demo_ac_temp
+                                  id: hvac_temp
                                   text:
                                     format: "%.1f °C"
                                     args: [ 'float(lv_arc_get_value(id(ac_arc))) / 10.0f' ]
@@ -688,7 +688,7 @@ lvgl:
                                   id: ac_arc
                                   value: !lambda return lv_arc_get_value(id(ac_arc)) + 5.0f;
                               - lvgl.label.update:
-                                  id: demo_ac_temp
+                                  id: hvac_temp
                                   text:
                                     format: "%.1f °C"
                                     args: [ 'float(lv_arc_get_value(id(ac_arc))) / 10.0f' ]
@@ -1127,11 +1127,11 @@ lvgl:
                                 - lambda: |-
                                     lv_arc_set_value(id(ac_arc), x * 10);
                                 - lvgl.label.update:
-                                    id: demo_ac_temp
+                                    id: hvac_temp
                                     text:
                                       format: "%.1f °C"
                                       args: [ 'x' ]
-                                - lambda: id(set_ac_temp)->execute(x);
+                                - lambda: id(set_hvac_temp)->execute(x);
                           - label:
                               align: CENTER
                               text_color: 0x3F4948
