@@ -1077,7 +1077,7 @@ lvgl:
                               text_font: montserrat_24
                               text: "Off"
                           - label:
-                              id: Climate_preset_label
+                              id: climate_preset_label
                               text_font: montserrat_24
                               text: "eco"   
                     - obj:
