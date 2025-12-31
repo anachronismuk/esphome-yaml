@@ -602,8 +602,7 @@ lvgl:
                       # Prevent frequent use of 'on_value'
                       # In case of performance issue
                       on_release:
-                        - lambda: |-
-                            lv_arc_set_value(id(ac_arc), x);
+                        - lambda: lv_arc_set_value(id(ac_arc), x);
                         - lvgl.label.update:
                             id: hvac_temp
                             text:
