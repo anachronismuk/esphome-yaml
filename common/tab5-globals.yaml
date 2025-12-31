@@ -18,6 +18,9 @@ globals:
   - id: hvac_state_table
     type: const char *[6]
     initial_value: '{ "heat_cool", "heat", "cool", "dry", "fan_only", "off" }'
+  - id: climate_modes_table
+    type: const char *[5]
+    initial_value: '{ "none", "frost", "eco", "comfort", "boost"}'
   - id: fan_modes_table
     type: const char *[4]
     initial_value: '{ "high", "medium", "low", "auto" }'
