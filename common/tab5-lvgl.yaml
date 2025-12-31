@@ -1144,7 +1144,7 @@ lvgl:
                               align: RIGHT_MID
                               on_click:
                                 - lambda: |-
-                                    lv_spinbox_set_step(id(temp_spin_box), 2);
+                                    lv_spinbox_set_step(id(temp_spin_box), 5);
                                 - lvgl.spinbox.increment: temp_spin_box
                               widgets:
                                 - label:

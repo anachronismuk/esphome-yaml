@@ -469,6 +469,7 @@ script:
           data:
             entity_id: climate.living_room_radiator_main_valve
             temperature: !lambda return temperature;
+            hvac_mode: heat
   - id: set_hvac_mode
     parameters:
       hvac_mode_idx: int
