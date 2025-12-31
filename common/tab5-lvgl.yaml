@@ -584,7 +584,7 @@ lvgl:
                   - arc:
                       align: CENTER
                       id: ac_arc
-                      min_value: 180
+                      min_value: 140
                       max_value: 320
                       arc_width: 35
                       width: 320
@@ -603,7 +603,7 @@ lvgl:
                       # In case of performance issue
                       on_release:
                         - lambda: |-
-                            int mod = int(x) % 5;
+                            int mod = int(x) % 2;
                             if ( mod == 0 ) 
                               lv_arc_set_value(id(ac_arc), x);
                             else 
@@ -626,7 +626,7 @@ lvgl:
                       align: CENTER
                       y: -80
                   - label:
-                      id: demo_hvac_temp
+                      id: hvac_temp
                       text_font: montserrat_48
                       text: "18.0 °C"
                       align: CENTER
@@ -661,7 +661,7 @@ lvgl:
                             on_press:
                               - lvgl.arc.update:
                                   id: ac_arc
-                                  value: !lambda return lv_arc_get_value(id(ac_arc)) - 5.0f;
+                                  value: !lambda return lv_arc_get_value(id(ac_arc)) - 2.0f;
                               - lvgl.label.update:
                                   id: hvac_temp
                                   text:
@@ -686,7 +686,7 @@ lvgl:
                             on_press:
                               - lvgl.arc.update:
                                   id: ac_arc
-                                  value: !lambda return lv_arc_get_value(id(ac_arc)) + 5.0f;
+                                  value: !lambda return lv_arc_get_value(id(ac_arc)) + 2.0f;
                               - lvgl.label.update:
                                   id: hvac_temp
                                   text:
@@ -1108,12 +1108,12 @@ lvgl:
                               width: 128
                               height: 52
                               x: -40
-                              range_from: 18.0
+                              range_from: 14.0
                               range_to: 32.0
                               digits: 3
                               decimal_places: 1
                               rollover: false
-                              value: 180  # Scale down to 18.0
+                              value: 18  # Scale down to 18.0
                               text_align: CENTER
                               text_font: montserrat_32
                               text_color: 0x3F4948
@@ -1125,7 +1125,7 @@ lvgl:
                               on_value:
                                 # use lvgl.arc.update will result a crash
                                 - lambda: |-
-                                    lv_arc_set_value(id(ac_arc), x * 10);
+                                    lv_arc_set_value(id(ac_arc), x);
                                 - lvgl.label.update:
                                     id: hvac_temp
                                     text:
@@ -1144,7 +1144,7 @@ lvgl:
                               align: RIGHT_MID
                               on_click:
                                 - lambda: |-
-                                    lv_spinbox_set_step(id(temp_spin_box), 5);
+                                    lv_spinbox_set_step(id(temp_spin_box), 2);
                                 - lvgl.spinbox.increment: temp_spin_box
                               widgets:
                                 - label:
